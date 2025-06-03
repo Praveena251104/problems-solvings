@@ -1,0 +1,27 @@
+// User function Template for Java
+link:https://www.geeksforgeeks.org/problems/print-matrix-in-snake-pattern-1587115621/1
+
+class Solution {
+    // Function to return list of integers visited in snake pattern in matrix.
+    static ArrayList<Integer> snakePattern(int matrix[][]) {
+        ArrayList<Integer> result=new ArrayList<>();
+        int l=0;
+        int r=matrix.length-1;
+        int n=matrix.length;
+        while(l<=r){
+            if(l<=r && l%2==0){
+                for(int i=0;i<n;i++){
+                    result.add(matrix[l][i]);
+                }
+                l++;
+            }
+            if(l<=r && l%2==1){
+                for(int i=n-1;i>=0;i--){
+                   result.add(matrix[l][i]);
+                }
+                l++;
+            }
+        }
+        return result;
+    }
+}
