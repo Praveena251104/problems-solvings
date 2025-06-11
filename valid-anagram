@@ -1,0 +1,22 @@
+Link:https://leetcode.com/problems/valid-anagram/description/?envType=problem-list-v2&envId=string
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length()!=t.length()){
+            return false;
+        }
+        int[]fuc1=new int[26];
+        int[]fuc2=new int[26];
+        for (char ch : s.toCharArray()) {
+            fuc1[ch - 'a']++;
+        }
+        for (char ch : t.toCharArray()) {
+            fuc2[ch - 'a']++;
+        }
+        for(int i=0;i<26;i++){
+            if(fuc1[i]!=fuc2[i]){
+                return false;
+            }
+        }
+        return true;
+    }
+}
