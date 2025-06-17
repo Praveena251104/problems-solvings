@@ -1,0 +1,15 @@
+Link:https://leetcode.com/problems/number-of-segments-in-a-string/description/?envType=problem-list-v2&envId=string
+class Solution {
+    public int countSegments(String s) {
+        if(s.length()==0) return 0;
+        String[] str=s.trim().split("\\s+");
+        int count=0;
+        for(int i=0;i<str.length;i++){
+            if(!str[i].isEmpty()){
+                count++;
+            }
+            
+        }
+        return count;
+    }
+}
