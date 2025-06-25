@@ -1,0 +1,38 @@
+// User function Template for Java
+Link:https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1?page=1&sortBy=submissions
+class Solution {
+    public static ArrayList<ArrayList<Integer>> getPairs(int[] arr) {
+        // code here
+        Arrays.sort(arr);
+        int l=0;
+        int r=arr.length-1;
+        int sum=0;
+        ArrayList<ArrayList<Integer>>fin=new ArrayList<>();
+        HashSet<String>hs=new HashSet<>();
+        while(l<r){
+            sum=arr[l]+arr[r];
+            
+            if(sum==0){
+                String key=arr[l]+","+arr[r];
+                if(!hs.contains(key)){
+                    ArrayList<Integer> res=new ArrayList<>();
+                    res.add(arr[l]);
+                    res.add(arr[r]);
+                    fin.add(res);
+                    hs.add(key);
+                }
+                l++;
+                r--;
+                
+            }
+            else if(sum<0){
+                l++;
+            }else{
+                r--;
+            }
+            
+        }
+        
+        return fin;
+    }
+}
