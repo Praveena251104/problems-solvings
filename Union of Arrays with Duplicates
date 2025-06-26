@@ -1,0 +1,21 @@
+Link:https://www.geeksforgeeks.org/problems/union-of-two-arrays3538/1?page=1&sortBy=submissions
+class Solution {
+    public static int findUnion(int a[], int b[]) {
+        // code here
+        HashSet<Integer> hs=new HashSet<>();
+        int count=0;
+        for(int i:a){
+           if(!hs.contains(i)){
+                hs.add(i);
+                count++;
+            }
+        }
+        for(int i:b){
+            if(!hs.contains(i)){
+                hs.add(i);
+                count++;
+            }
+        }
+        return count;
+    }
+}
