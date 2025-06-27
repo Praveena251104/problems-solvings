@@ -1,0 +1,22 @@
+// User function Template for Java
+Link:https://www.geeksforgeeks.org/problems/move-all-negative-elements-to-end1813/1?page=1&sortBy=submissions
+class Solution {
+    public void segregateElements(int[] arr) {
+        // Your code goes here
+        int neg[]=new int[arr.length];
+        int val=0;
+        for(int i=0;i<neg.length;i++){
+            if(arr[i]>=0){
+                neg[val++]=arr[i];
+            }
+        }
+        for(int i=0;i<neg.length;i++){
+            if(arr[i]<0){
+                neg[val++]=arr[i];
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            arr[i]=neg[i];
+        }
+    }
+}
