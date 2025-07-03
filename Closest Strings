@@ -1,0 +1,26 @@
+// User function Template for Java
+Link:https://www.geeksforgeeks.org/problems/closest-strings0611/1?page=1&difficulty=Basic,Easy&sortBy=submissions
+class Solution {
+    int shortestDistance(ArrayList<String> s, String word1, String word2) {
+        // code here
+        int min=Integer.MAX_VALUE;
+        int firstw=-1,secondw=-1;
+        for(int i=0;i<s.size();i++){
+            String word = s.get(i);
+            if(word.equals(word1)){
+                firstw=i;
+                if(secondw != -1){
+                    min = Math.min(min, Math.abs(firstw - secondw));
+                }
+            }
+            if(word.equals(word2)){
+                secondw=i;
+                if (firstw != -1) {
+                    min = Math.min(min, Math.abs(firstw - secondw));
+                }
+            }
+        }
+        
+        return min;
+    }
+};
