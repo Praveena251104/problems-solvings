@@ -1,0 +1,16 @@
+// User function Template for Java
+Link:https://www.geeksforgeeks.org/problems/-minimum-number-of-coins4426/1?page=1&difficulty=Easy&sortBy=submissions
+class Solution {
+    static List<Integer> minPartition(int N) {
+        // code here
+        int []domain={2000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+        List<Integer> result=new ArrayList<>();
+        for(int coin:domain){
+            while(N>=coin){
+                N-=coin;
+                result.add(coin);
+            }
+        }
+        return result;
+    }
+}
