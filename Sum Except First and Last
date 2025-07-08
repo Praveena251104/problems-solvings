@@ -1,0 +1,11 @@
+Link:https://www.geeksforgeeks.org/problems/max-length-chain/1?page=1&difficulty=Basic&sortBy=submissions
+class Solution {
+    int sumExceptFirstLast(int[] arr) {
+        // your code here
+        int sum=0;
+        for(int i=1;i<arr.length-1;i++){
+            sum+=arr[i];
+        }
+        return sum;
+    }
+}
