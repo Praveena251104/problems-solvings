@@ -1,0 +1,21 @@
+// User function Template for Java
+Link:https://www.geeksforgeeks.org/problems/minimum-times-a-has-to-be-repeated-such-that-b-is-a-substring-of-it--170631/1?page=1&sortBy=submissions
+class Solution {
+    static int minRepeats(String A, String B) {
+        StringBuilder rep=new StringBuilder();
+        int count=0;
+        while(rep.length()<B.length()){
+            rep.append(A);
+            count++;
+        }
+        if(rep.toString().contains(B)){
+            return count;
+        }
+        rep.append(A);
+        count++;
+        if(rep.toString().contains(B)){
+            return count;
+        }
+        return -1;
+    }
+};
