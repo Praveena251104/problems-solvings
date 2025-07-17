@@ -1,0 +1,27 @@
+Link:https://www.geeksforgeeks.org/problems/node-at-a-given-index-in-linked-list/1?page=1&sprint=ca8ae412173dbd8346c26a0295d098fd&sortBy=submissions
+/*node class of the linked list
+class Node
+{
+    int data;
+    Node next;
+    Node(int key)
+    {
+        data = key;
+        next = null;
+    }
+}
+*/
+
+class Solution {
+    public int GetNth(Node head, int index) {
+        // Code here
+        int currIndex=1;
+        for(Node temp=head;temp!=null; temp=temp.next){
+            if(currIndex==index){
+                return temp.data;
+            }
+            currIndex++;
+        }
+        return -1;
+    }
+}
