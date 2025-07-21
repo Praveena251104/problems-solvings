@@ -1,0 +1,14 @@
+Link:https://www.geeksforgeeks.org/problems/divisible-by-73224/1?page=1&sortBy=submissions
+// User function Template for Java
+
+
+class Solution {
+    int isdivisible7(String num) {
+       int mod=0;
+       for(int i=0;i<num.length();i++){
+           int dig=num.charAt(i)-'0';
+           mod=(mod*10+dig)%7;
+       }
+       return mod==0?1:0;
+    }
+}
