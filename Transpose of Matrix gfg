@@ -1,0 +1,17 @@
+Link:https://www.geeksforgeeks.org/problems/transpose-of-matrix-1587115621/1?page=1&difficulty=Easy&sprint=ca8ae412173dbd8346c26a0295d098fd&sortBy=submissions
+class Solution {
+    public ArrayList<ArrayList<Integer>> transpose(int[][] mat) {
+        // code here
+        int n=mat.length;
+        int m=mat[0].length;
+        ArrayList<ArrayList<Integer>> result=new ArrayList<>();
+        for(int i=0;i<m;i++){
+            ArrayList<Integer> row=new ArrayList<>();
+            for(int j=0;j<n;j++){
+                row.add(mat[j][i]);
+            }
+            result.add(row);
+        }
+        return result;
+    }
+}
