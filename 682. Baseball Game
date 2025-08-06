@@ -1,0 +1,27 @@
+Link:https://leetcode.com/problems/baseball-game/description/
+class Solution {
+    public int calPoints(String[] operations) {
+        Stack<Integer> st=new Stack<>();
+        for(String ops:operations){
+            switch(ops){
+                case "+":
+                    int firstlag=st.pop();
+                    int seclag=st.peek(); 
+                    st.push(firstlag);
+                    st.push(firstlag+seclag);
+                    break;
+                case "C":
+                    st.pop();
+                    break;
+                case "D":
+                    st.push(st.peek()*2);
+                    break;
+                default:
+                    st.push(Integer.parseInt(ops));
+                
+            }
+        }
+        return st.stream().mapToInt(Integer::intValue).sum();
+        
+    }
+}
